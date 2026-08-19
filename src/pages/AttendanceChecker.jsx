@@ -4,17 +4,26 @@ import "../App.css";
 function AttendanceChecker() {
   const [employeeName, setEmployeeName] = useState("");
   const [timeIn, setTimeIn] = useState("");
+
+  const [resultEmployeeName, setResultEmployeeName] = useState("");
+  const [resultTimeIn, setResultTimeIn] = useState("");
+
   const [attendance, setAttendance] = useState("");
   const [message, setMessage] = useState("");
 
   const checkAttendance = () => {
     if (employeeName.trim() === "" || timeIn === "") {
-      setAttendance("Invalid");
+      setAttendance("");
+      setResultEmployeeName("");
+      setResultTimeIn("");
       setMessage("Please enter employee name and time in.");
       return;
     }
 
     const time = Number(timeIn);
+
+    setResultEmployeeName(employeeName.trim());
+    setResultTimeIn(timeIn);
 
     if (time <= 8) {
       setAttendance("On Time");
@@ -31,6 +40,8 @@ function AttendanceChecker() {
   const resetAttendance = () => {
     setEmployeeName("");
     setTimeIn("");
+    setResultEmployeeName("");
+    setResultTimeIn("");
     setAttendance("");
     setMessage("");
   };
@@ -88,16 +99,22 @@ function AttendanceChecker() {
             </button>
           </div>
 
+          {message && attendance === "" && (
+            <div className="error-message">
+              {message}
+            </div>
+          )}
+
           {attendance && (
             <div className="result-card">
               <h2>Attendance Result</h2>
 
               <p>
-                Employee Name: <strong>{employeeName}</strong>
+                Employee Name: <strong>{resultEmployeeName}</strong>
               </p>
 
               <p>
-                Time In: <strong>{timeIn}</strong>
+                Time In: <strong>{resultTimeIn}</strong>
               </p>
 
               <p className="status">
