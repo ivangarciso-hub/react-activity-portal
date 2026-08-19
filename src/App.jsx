@@ -13,19 +13,29 @@ export default function App() {
 
   const renderPage = () => {
     switch (activePage) {
-      case 'act1': return <Login />;
-      case 'act2': return <GradeEvaluation />;
-      case 'act3': return <PasswordChecker />;
-      case 'act4': return <ElectricityBill />;
-      case 'act5': return <AttendanceChecker />;
-      default: return <Home setActivePage={setActivePage} />;
+      case 'act1':
+        return <Login />;
+      case 'act2':
+        return <GradeEvaluation />;
+      case 'act3':
+        return <PasswordChecker />;
+      case 'act4':
+        return <ElectricityBill />;
+      case 'act5':
+        return <AttendanceChecker />;
+      default:
+        return <Home setActivePage={setActivePage} />;
     }
   };
 
   return (
-    <div className="app-container">
-      <Navbar activePage={activePage} setActivePage={setActivePage} />
-      <main className="content">
+    <div className="min-h-screen bg-slate-100 text-slate-800">
+      <Navbar
+        activePage={activePage}
+        setActivePage={setActivePage}
+      />
+
+      <main className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         {renderPage()}
       </main>
     </div>
