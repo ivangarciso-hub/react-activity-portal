@@ -38,68 +38,79 @@ function AttendanceChecker() {
   return (
     <div className="app-container">
       <div className="attendance-card">
-        <h1>Employee Attendance Checker</h1>
 
-        <p className="subtitle">
-          Check your attendance status based on your time in.
-        </p>
-
-        <div className="form-group">
-          <label>Employee Name</label>
-          <input
-            type="text"
-            value={employeeName}
-            onChange={(e) => setEmployeeName(e.target.value)}
-            placeholder="Enter employee name"
-          />
+        <div className="attendance-header">
+          <h1>Employee Attendance Checker</h1>
+          <p>Activity 5</p>
         </div>
 
-        <div className="form-group">
-          <label>Time In</label>
-          <input
-            type="number"
-            value={timeIn}
-            onChange={(e) => setTimeIn(e.target.value)}
-            placeholder="Example: 8.5"
-            step="0.1"
-          />
-        </div>
+        <div className="attendance-content">
+          <p className="subtitle">
+            Check your attendance status based on your time in.
+          </p>
 
-        <div className="button-group">
-          <button
-            className="check-button"
-            onClick={checkAttendance}
-          >
-            Check Attendance
-          </button>
+          <div className="form-group">
+            <label>Employee Name</label>
 
-          <button
-            className="reset-button"
-            onClick={resetAttendance}
-          >
-            Reset
-          </button>
-        </div>
-
-        {attendance && (
-          <div className="result-card">
-            <h2>Attendance Result</h2>
-
-            <p>
-              Employee Name: <strong>{employeeName}</strong>
-            </p>
-
-            <p>
-              Time In: <strong>{timeIn}</strong>
-            </p>
-
-            <p className="status">
-              Attendance Status: {attendance}
-            </p>
-
-            <p className="message">{message}</p>
+            <input
+              type="text"
+              value={employeeName}
+              onChange={(e) => setEmployeeName(e.target.value)}
+              placeholder="Enter employee name"
+            />
           </div>
-        )}
+
+          <div className="form-group">
+            <label>Time In</label>
+
+            <input
+              type="number"
+              value={timeIn}
+              onChange={(e) => setTimeIn(e.target.value)}
+              placeholder="Example: 8.5"
+              step="0.1"
+            />
+          </div>
+
+          <div className="button-group">
+            <button
+              className="check-button"
+              onClick={checkAttendance}
+            >
+              Check Attendance
+            </button>
+
+            <button
+              className="reset-button"
+              onClick={resetAttendance}
+            >
+              Reset
+            </button>
+          </div>
+
+          {attendance && (
+            <div className="result-card">
+              <h2>Attendance Result</h2>
+
+              <p>
+                Employee Name: <strong>{employeeName}</strong>
+              </p>
+
+              <p>
+                Time In: <strong>{timeIn}</strong>
+              </p>
+
+              <p className="status">
+                Attendance Status: {attendance}
+              </p>
+
+              <p className="message">
+                {message}
+              </p>
+            </div>
+          )}
+        </div>
+
       </div>
     </div>
   );

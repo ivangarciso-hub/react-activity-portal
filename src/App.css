@@ -1,1 +1,131 @@
 @import "tailwindcss";
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #f3f7ff;
+}
+
+.attendance-card {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.attendance-header {
+  background: #4f3df5;
+  color: white;
+  padding: 30px;
+  text-align: left;
+}
+
+.attendance-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.attendance-header p {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
+.attendance-content {
+  padding: 30px;
+}
+
+.attendance-content .subtitle {
+  text-align: left;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.attendance-content .form-group {
+  margin-bottom: 20px;
+}
+
+.attendance-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.attendance-content input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.attendance-content input:focus {
+  outline: none;
+  border-color: #4f3df5;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.check-button,
+.reset-button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.check-button {
+  background: #4f3df5;
+  color: white;
+}
+
+.reset-button {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.check-button:hover {
+  background: #4338ca;
+}
+
+.reset-button:hover {
+  background: #e2e8f0;
+}
+
+.result-card {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 5px solid #4f3df5;
+}
+
+.result-card h2 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.result-card p {
+  margin: 10px 0;
+}
+
+.status {
+  font-weight: 700;
+}
+
+.message {
+  color: #475569;
+}
